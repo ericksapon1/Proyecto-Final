@@ -1,0 +1,28 @@
+# Proyecto de Gestión de Proyectos
+
+## Requisitos Previos
+
+- JDK 17 o superior
+- Maven
+- IntelliJ IDEA o cualquier IDE de Java
+
+## Clonar el Repositorio
+
+1. Abre tu terminal o línea de comandos.
+2. Ejecuta el siguiente comando para clonar el repositorio:
+   ```bash
+   git clone # Proyecto de Gestión de Proyectos
+
+## Requisitos Previos
+
+- JDK 17 o superior
+- Maven
+- IntelliJ IDEA o cualquier IDE de Java
+
+## Clonar el Repositorio
+
+1. Abre tu terminal o línea de comandos.
+2. Ejecuta el siguiente comando para clonar el repositorio:
+   ```bash
+   git clone https://github.com/ericksapon1/Proyecto-Final/
+
