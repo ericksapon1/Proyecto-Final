@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+</head>
+<body>
+
+<h1>Lista de Tareas</h1>
+
+<!-- Formulario para agregar una nueva tarea -->
+<h2>Agregar Nueva Tarea</h2>
+<form action="/api/tareas/agregar" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre de la tarea" required>
+    <br>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" name="descripcion" placeholder="Descripción de la tarea" required>
+    <br>
+    <button type="submit">Agregar Tarea</button>
+</form>
+
+<hr>
+
+<!-- Lista de tareas existentes -->
+<h2>Tareas Existentes</h2>
+<ul>
+    <th:block th:each="tarea : ${tareas}">
+        <li>
+            <h3 th:text="${tarea.nombre}">Nombre de la Tarea</h3>
+            <p th:text="${tarea.descripcion}">Descripción de la Tarea</p>
+
+            <!-- Formulario para eliminar la tarea -->
+            <form action="/api/tareas/eliminar/{id}" method="POST" th:action="'/api/tareas/eliminar/' + ${tarea.id}">
+                <button type="submit">Eliminar</button>
+            </form>
+
+            <!-- Formulario para editar la tarea -->
+            <h4>Editar Tarea</h4>
+            <form action="/api/tareas/editar/{id}" method="POST" th:action="'/api/tareas/editar/' + ${tarea.id}">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" th:value="${tarea.nombre}" required>
+                <br>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" th:value="${tarea.descripcion}" required>
+                <br>
+                <button type="submit">Actualizar Tarea</button>
+            </form>
+        </li>
+    </th:block>
+</ul>
+
+</body>
+</html>

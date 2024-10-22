@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear Proyecto</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- Incluye tu CSS -->
+</head>
+<body>
+<h1>Crear Proyecto</h1>
+<form th:action="@{/templates/api/proyectos}" method="post" th:object="${proyecto}">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" th:field="*{nombre}" required>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" th:field="*{descripcion}" required></textarea>
+
+    <button type="submit">Crear Proyecto</button>
+</form>
+<a href="/templates/api/proyectos/view">Volver a la lista de proyectos</a>
+</body>
+</html>

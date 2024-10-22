@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Tarea</title>
+</head>
+<body>
+<h1>Agregar Nueva Tarea</h1>
+<form action="/api/tareas/agregar" method="POST">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+  <br>
+  <label for="proyectoId">ID del Proyecto:</label>
+  <input type="number" id="proyectoId" name="proyectoId" required>
+  <br>
+  <button type="submit">Agregar Tarea</button>
+</form>
+</body>
+</html>
